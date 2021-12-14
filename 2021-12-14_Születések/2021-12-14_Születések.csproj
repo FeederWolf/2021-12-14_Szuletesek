@@ -6,4 +6,13 @@
     <RootNamespace>_2021_12_14_Születések</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="feladat_ru_prg_180517.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="vas.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
