@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace _2021_12_14_Születések
 {
@@ -6,7 +11,15 @@ namespace _2021_12_14_Születések
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<Szemely> személyek = new List<Szemely>();
+            foreach (var sor in File.ReadAllLines("vas.txt"))
+            {
+                személyek.Add(new Szemely(sor));
+            }
+
+            személyek[0].CdvEll();
+            
+            Console.ReadKey();
         }
     }
 }
