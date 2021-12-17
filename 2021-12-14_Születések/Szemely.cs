@@ -12,13 +12,17 @@ namespace _2021_12_14_Születések
         public bool CdvEll {
             get {
                 string sz = SzemélyiSzám.Replace("-", "");
+                int checkSum = int.Parse(sz.Last().ToString()); //levágjuk a végét (10. index) -> K és stringre alakítom
+                Console.WriteLine(checkSum);
                 int szum = 0;
-                int Jackson = sz[sz.Length]; //levágjuk a végét (10. index) -> K
-                for (int i = 0; i < SzemélyiSzám.Length; i++)
+
+                //sz = sz.Reverse().ToString();
+
+                for (int i = 0; i < 10; i++)
                 {
-                    szum += i * sz[i];
+                    szum += (10 - i) * int.Parse(sz[i].ToString()); //10 - i: 10,9,8,7...
                 }
-                return false;            
+                return checkSum == szum % 11;            
             }
         }
         public Szemely(string Sor)
