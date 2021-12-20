@@ -60,17 +60,30 @@ namespace _2021_12_14_Születések
              Console.WriteLine($"6. feladat: Fiúk száma: {fiúk}");
 
             //7.
+            /*
            int minÉv = 5000;
            int maxÉv = 0;
             foreach (var sz in személyek)
             {
-                int akt = int.Parse(sz.SzemélyiSzám.Substring(2, 2));
+                int akt = sz.SzületésiDátum.Year;
                 if (akt >= 97 && akt <= 99) akt += 1900;
                 else akt += 2000;
                 if (akt < minÉv) minÉv = akt;
                 if (akt > maxÉv) maxÉv = akt;
             }
-            Console.WriteLine($"7. feladat: Vizsgált időszak: {maxÉv} - {maxÉv}");
+            */
+            //7.b
+            int minÉv = személyek.Min(x => x.SzületésiDátum.Year);
+            int maxÉv = személyek.Max(x => x.SzületésiDátum.Year);
+
+            Console.WriteLine($"7. feladat: Vizsgált időszak: {minÉv} - {maxÉv}");
+
+            //.8 döntse el
+            DateTime d = new DateTime(2004, 01, 01);
+            DateTime.IsLeapYear(2004);
+            Console.WriteLine($"{személyek[0].SzületésiDátum}");
+
+
             Console.ReadKey();
         }
     }
